@@ -1,0 +1,1137 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2; /* Ensure nav stays on top */
+}
+
+nav img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.nav-toggle {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    z-index: 2; /* Ensure toggle button is clickable */
+}
+
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Ensure the .nav-links container is set correctly */
+.nav-links {
+    display: none;
+    text-align: left;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust transparency as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-links ul li {
+    margin-bottom: 10px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    color: navy;
+}
+
+.close-btn {
+    font-size: 30px;
+    color: navy;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .nav-links {
+        opacity: 0;
+        transform: translateX(100%);
+        background-color: rgba(255, 255, 255, 0.9); /* Adjust transparency as needed */
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .nav-links ul {
+        display: block;
+        margin: 20px 0;
+    }
+
+    .nav-links ul li {
+        margin-bottom: 15px; /* Adjust spacing */
+    }
+
+    .close-btn {
+        left: 10px;
+    }
+}   color: #f44336; /* Color on hover */
+}
+
+/* Add a close button */
+.nav-links .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    font-size: 24px;
+    cursor: pointer;
+    color: navy; /* Color for the close button */
+}
+
+.text-box {
+    max-width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0 auto;
+}
+
+.text-box h1 {
+    font-size: 72px;
+}
+
+.text-box p {
+    max-width: 95%;
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 34px;
+    font-size: 25px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    border: 1px solid #d3393b;
+    background: #d3393b;
+    transition: 1s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .text-box {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .text-box h1 {
+        font-size: 48px;
+    }
+
+    .text-box p {
+        font-size: 14px;
+    }
+
+    .nav-links {
+        display: block; /* Show on mobile */
+        opacity: 0; /* Start hidden */
+        transform: translateX(100%); /* Start off-screen */
+    }
+
+    .nav-links.open {
+        opacity: 1; /* Show when open */
+        transform: translateX(0); /* Slide in */
+    }
+
+    .nav-links ul {
+        display: block;
+        margin: 20px 0;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .nav-links ul li {
+        margin-bottom: 10px;
+    }
+
+    .nav-links ul li a {
+        font-size: 18px;
+        color: navy; /* Navy text color */
+        transition: color 0.3s ease;
+    }
+
+    .nav-links ul li a:hover {
+        color: #f44336; /* Hover effect color */
+    }
+
+    .nav-links ul li::after {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block; /* Show the toggle button on mobile */
+    }
+
+    .close-btn {
+        font-size: 30px;
+        color: navy;
+        background: none;
+        border: none;
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        cursor: pointer;
+    }
+
+    .header {
+        height: 80vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-box h1 {
+        font-size: 36px;
+    }
+    .text-box {
+        top: 55%; /* Raise the text upwards */
+    }
+}
+
+
+/*-------- activities ---------*/
+
+.activities {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 100px 0;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping of activities */
+}
+
+.activities-col {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px; /* Set fixed width for each activity box */
+    margin-right: 20px; /* Adjust spacing between boxes */
+    background: #ffcccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: box-shadow 0.5s;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.activities-col img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.activities-col h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+}
+
+.activities-col p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px;
+    max-height: 4em; /* Limit maximum height of text */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+}
+
+.activities-col a {
+    display: block;
+    color: #d3393b;
+    text-decoration: none;
+    font-weight: bold;
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+}
+
+.activities-col:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/*-------- achievements ---------*/
+
+.achievements {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.large-title {
+    font-size: 48px;
+    margin-bottom: 50px;
+    color: #051d37;
+}
+
+.achievements-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.achievements-col {
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: box-shadow 0.5s;
+}
+
+.achievements-col img {
+    width: 80px; /* Smaller image size */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.achievements-col h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.large-number {
+    font-size: 30px;
+}
+
+.small-text {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .achievements {
+        padding: 50px 20px; /* Reduce padding on smaller screens */
+    }
+
+    .achievements-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+        gap: 10px; /* Adjust the gap between items */
+        max-width: 100%; /* Ensure container can occupy full width */
+        margin: auto; /* Center align the container */
+        padding: 20px; /* Adjust padding inside the container */
+    }
+
+    .achievements-col {
+        border-radius: 10px; /* Keep rounded corners if desired */
+        padding: 20px; /* Adjust padding inside the box */
+        box-sizing: border-box;
+        transition: box-shadow 0.5s;
+        overflow: hidden; /* Hide overflowing content */
+        text-align: center; /* Center align text */
+        background-color: transparent; /* Remove background color */
+        box-shadow: none; /* Remove box shadow */
+        border: none; /* Remove borders */
+    }
+
+    .achievements-col img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px; /* Keep rounded corners if desired */
+        margin-bottom: 10px;
+    }
+
+    .achievements-col h3 {
+        font-size: 18px; /* Decreased font size for headings */
+        margin-bottom: 8px; /* Adjusted margin bottom */
+        white-space: nowrap; /* Prevent wrapping */
+        overflow: hidden; /* Hide overflowing text */
+        text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+    }
+
+    .achievements-col h3 .large-number {
+        font-size: 20px; /* Adjusted font size for large numbers */
+    }
+
+    .achievements-col h3 .small-text {
+        font-size: 12px; /* Decreased font size for small text */
+    }
+}
+
+
+
+/*------------ volunteer -------*/
+/* Base Styles */
+.help-us-bg {
+    background-image: url('images/bghelp.png'); /* Adjust the image path */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.large-title {
+    text-align: center;
+    color: #051d37;
+}
+
+.help-us-title {
+    color: white;
+}
+
+.help-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between boxes */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.call-to-action-box {
+    background-color: #d3393b; 
+    opacity: 0.7;
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px; /* Adjust margin-bottom for spacing */
+    text-align: center;
+    width: calc(33.333% - 20px); /* Three boxes per row, accounting for gap */
+    transition: box-shadow 0.5s ease;
+}
+
+.call-to-action-box:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+}
+
+.call-to-action-box i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.call-to-action-box h3 {
+    font-size: 24px;
+    margin-bottom: 30px; /* Adjust margin-bottom */
+}
+
+.call-to-action-box p {
+    font-size: 18px;
+    margin-bottom: 20px; /* Adjust margin-bottom */
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: #25567f;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #003d80;
+}
+
+@media (max-width: 768px) {
+    .call-to-action-box {
+        width: calc(50% - 20px); /* Full width minus gap */
+        padding: 0 20px; /* Smaller padding */
+        margin-bottom: 20px; /* Adjust margin-bottom for spacing */
+        font-size: 14px; /* Smaller font size */
+        /* Reducing overall size */
+        border-radius: 4px; /* Slightly smaller border-radius */
+    }
+    
+    .call-to-action-box i {
+        font-size: 36px; /* Smaller icon */
+    }
+
+    .call-to-action-box h3 {
+        font-size: 18px; /* Smaller heading */
+        margin-bottom: 15px; /* Adjust margin-bottom */
+    }
+
+    .call-to-action-box p {
+        font-size: 14px; /* Smaller paragraph text */
+        margin-bottom: 10px; /* Adjust margin-bottom */
+    }
+
+    .cta-btn {
+        padding: 8px 16px; /* Smaller button padding */
+    }
+}
+
+/* -----------------news--------------------- */
+
+.latest-news {
+    width: 80%;
+    margin: auto;
+    overflow-x: auto; /* Use overflow-x to allow horizontal scrolling */
+    white-space: nowrap;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.news-container {
+    white-space: normal;
+    display: flex; /* Use flexbox to make the news articles display horizontally */
+    flex-wrap: nowrap; /* Prevent wrapping of news articles to maintain horizontal layout */
+}
+.news-article {
+    width: 300px;
+    margin-right: 20px;
+    background: #ffcccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    transition: box-shadow 0.5s; /* Add transition for the shadow effect */
+}
+
+.news-article:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+}
+
+
+.news-article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.news-article h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.news-article p {
+    font-size: 16px;
+    color: #777;
+}
+
+.news-article a {
+    display: block;
+    margin-top: 10px;
+    color: #d3393b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-article a:hover {
+    text-decoration: underline;
+}
+
+
+/* Featured Articles Section */
+.featured-articles {
+    width: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    padding: 100px 0;
+    text-align: center;
+}
+
+.featured-news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Adjust spacing between articles */
+    margin-top: 20px;
+}
+.featured-news-article {
+    flex: 0 0 auto; /* Ensure items don't grow and fit their content */
+    width: 300px; /* Fixed width for each article */
+    margin-right: 20px; /* Adjust spacing between articles */
+    background: #ffcccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left; /* Align text inside the box to the left */
+    display: inline-block; /* Display articles inline */
+    vertical-align: top; /* Align articles at the top */
+    transition: box-shadow 0.5s; /* Add transition for the shadow effect */
+}
+
+.featured-news-article:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+}
+
+
+.featured-news-article img {
+    display: block; /* Ensure images behave like blocks */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.featured-news-article h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.featured-news-article p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px; /* Add some bottom margin for separation */
+    text-align: justify; /* Justify text for a cleaner look */
+}
+
+.featured-news-article a {
+    display: inline-block;
+    color: #d3393b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.featured-news-article a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/*------------ back to top -------*/
+
+#backToTopBtn {
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: #051d37;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+}
+
+
+/*------------videos -------*/
+.activities-vidsec, .video-section {
+    background-color: #FFFFFF; /* Choose your desired background color */
+    padding: 40px 20px; /* Adjust padding as needed */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; /* Center text inside the block */
+}
+
+.activities-vidsec h2, .video-section h2 {
+    font-size: 28px; /* Adjust font size */
+    margin-bottom: 20px; /* Adjust spacing */
+    border-radius: 10px;
+}
+
+.featured-video1 {
+    width: 80%; /* Adjust the maximum width of the video container */
+    margin: 0 auto; /* Center the container within the section */
+    max-width: 560px; /* Ensure both videos are not wider than 560px */
+    height: auto; /* Ensure height is auto for responsiveness */
+    overflow: hidden; /* Hide any overflow */
+}
+
+.featured-video1 video {
+    width: 100%; /* Make the video responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: add rounded corners */
+}
+
+.featured-video2 {
+    width: 30%; /* Adjust the maximum width of the video container */
+    margin: 0 auto; /* Center the container within the section */
+    max-width: 560px; /* Ensure both videos are not wider than 560px */
+    height: auto; /* Ensure height is auto for responsiveness */
+    overflow: hidden; /* Hide any overflow */
+    border-radius: 10px;
+    transform: scale(0.5); /* Scale the container down by 50% */
+    transform-origin: top left; /* Keep the top left corner in place */
+}
+
+.featured-video2 iframe {
+    width: 100%; /* Make the iframe responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+
+
+/*------------ footer 051d37 -------*/
+.footer {
+    background-color: #051d37; /* Navy blue background color for the footer */
+    color: #fff;
+    padding: 20px 40px;
+    overflow: hidden; /* Ensure that no overflow occurs */
+    margin: 0; /* Ensure no margin is added to the footer */
+    width: 100%; /* Ensure footer takes the full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensure it spans the full width */
+    box-sizing: border-box; /* Ensure padding is included in total width */
+}
+
+.footer-column {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-right: 30px;
+    margin-left: 20px;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Circle background color */
+    border-radius: 50%; /* Make it a circle */
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    font-size: 24px;
+    color: #051d37; /* Icon color */
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #0a2951; /* Slightly darker navy blue for hover */
+}
+
+.slogan {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 150px;
+}
+
+.slogan-image {
+    width: 400px;
+    height: auto;
+    margin-right: 500px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction:; /* Stack links vertically */
+    align-items: center; /* Center links horizontally within the footer */
+    gap: 20px; /* Space between navigation links */
+    margin: 0; /* Remove margin */
+    padding: 20; /* Remove padding */
+    margin-bottom: 40px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px; /* Adjust font size as needed */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ff0000; /* Red color on hover */
+}
+
+.footer-text {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    /* Activities Section */
+    .activities-col h3 {
+        font-size: 20px; /* Smaller font size for activity titles */
+    }
+
+    .activities-col p {
+        font-size: 14px; /* Smaller font size for activity descriptions */
+    }
+
+    /* Achievements Section */
+    .large-title {
+        font-size: 32px; /* Smaller font size for the main title */
+    }
+
+    .achievements-col h3 {
+        font-size: 18px; /* Smaller font size for headings inside achievements */
+    }
+
+    .achievements-col .large-number {
+        font-size: 24px; /* Smaller font size for large numbers */
+    }
+
+    .achievements-col .small-text {
+        font-size: 14px; /* Smaller font size for small text */
+    }
+
+    /* Latest News Section */
+    .news-article h3 {
+        font-size: 20px; /* Smaller font size for news article titles */
+    }
+
+    .news-article p {
+        font-size: 14px; /* Smaller font size for news article content */
+    }
+
+    .featured-news-article h3 {
+        font-size: 18px; /* Smaller font size for featured news article titles */
+    }
+
+    .featured-news-article p {
+        font-size: 14px; /* Smaller font size for featured news article content */
+    }
+}
+
+/* For extra small screens */
+@media (max-width: 480px) {
+    /* Activities Section */
+    .activities-col h3 {
+        font-size: 18px; /* Even smaller font size for activity titles */
+    }
+
+    .activities-col p {
+        font-size: 12px; /* Even smaller font size for activity descriptions */
+    }
+
+    /* Achievements Section */
+    .large-title {
+        font-size: 24px; /* Even smaller font size for the main title */
+    }
+
+    .achievements-col h3 {
+        font-size: 16px; /* Even smaller font size for headings inside achievements */
+    }
+
+    .achievements-col .large-number {
+        font-size: 20px; /* Even smaller font size for large numbers */
+    }
+
+    .achievements-col .small-text {
+        font-size: 12px; /* Even smaller font size for small text */
+    }
+
+    /* Latest News Section */
+    .news-article h3 {
+        font-size: 18px; /* Even smaller font size for news article titles */
+    }
+
+    .news-article p {
+        font-size: 12px; /* Even smaller font size for news article content */
+    }
+
+    .featured-news-article h3 {
+        font-size: 16px; /* Even smaller font size for featured news article titles */
+    }
+
+    .featured-news-article p {
+        font-size: 12px; /* Even smaller font size for featured news article content */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .text-box {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    .text-box h1 {
+        font-size: 36px;
+    }
+    .text-box p {
+        font-size: 14px;
+    }
+    .nav-links {
+        display: none;
+        position: fixed;
+        width: 100%;
+        background: #333;
+        right: 0;
+        top: 0;
+        text-align: center;
+        z-index: 999;
+        transition: all 0.5s;
+    }
+    .nav-links ul {
+        display: block;
+        margin: 20px 0;
+    }
+    .nav-links ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .nav-links.open {
+        top: 60px;
+    }
+    .nav-links ul li::after {
+        display: none;
+    }
+    .header {
+        height: 80vh;
+    }
+    .latest-news,
+    .featured-articles {
+        padding: 50px 0;
+    }
+    .news-article,
+    .featured-news-article {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .footer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-box h1 {
+        font-size: 36px;
+    }
+    .activities {
+        padding: 30px;
+    }
+    .achievements {
+        padding: 30px;
+    }
+    .cta-btn {
+        padding: 8px 16px;
+        font-size: 18px;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer-column {
+        margin-bottom: 20px;
+    }
+    .slogan {
+        margin-right: 20px;
+    }
+    .slogan-image {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .news-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Adjust this value as needed */
+    }
+
+@media (max-width: 768px) {
+    .news-article {
+        width: 100%; /* Adjusted width for full width on mobile */
+        max-width: 300px; /* Set a maximum width to maintain box size */
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .featured-news-article {
+        width: calc(50% - 20px); /* Adjusted width for two columns with a gap */
+        max-width: 100%; /* Ensure articles can occupy full width on smaller screens */
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .featured-news-article h3 {
+        font-size: 18px; /* Adjusted font size for article titles */
+    }
+
+    .featured-news-article p {
+        font-size: 12px; /* Adjusted font size for article content */
+ 
+ #backToTopBtn {
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: #051d37;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+}   }
+}
+@media (max-width: 768px) {
+    #backToTopBtn {
+        display: inline-block; /* Ensure button is displayed on smaller screens */
+        bottom: 20px; /* Adjust position as needed */
+        right: 20px; /* Adjust position as needed */
+        #backToTopBtn {
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    background-color: #051d37;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+}
+
+    }
+}
+@media (max-width: 768px) {
+    .featured-news-article {
+        text-align: justify; /* Justify text inside the box */
+    }
+}
+@media (max-width: 768px) {
+    .large-title {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+}
+@media (max-width: 768px) {
+    .featured-video1, .featured-video2 {
+        width: 80%;
+    }
+
+    .featured-video2 {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-video1, .featured-video2 {
+        width: 90%;
+    }
+
+    .featured-video2 {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-video1, .featured-video2 {
+        width: 100%;
+    }
+
+    .featured-video2 {
+        transform: scale(0.6);
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-video1, .featured-video2 {
+        width: 100%;
+    }
+
+    .featured-video2 {
+        transform: scale(0.5);
+    }
+}
