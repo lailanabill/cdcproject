@@ -278,7 +278,6 @@ nav {
 
 .nav-links ul li a {
   text-decoration: none;
-  color: #fff;
   font-size: 18px;
   font-weight: bold;
   transition: color 0.3s ease;
@@ -343,6 +342,7 @@ nav {
 
   .nav-links ul li a {
     font-size: 24px;
+    color: black;
   }
 }
 
@@ -354,6 +354,7 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+
   margin: 0 auto;
 }
 
@@ -376,6 +377,7 @@ nav {
   padding: 12px 34px;
   font-size: 25px;
   background: transparent;
+  border: 1px solid #fff;
   position: relative;
   cursor: pointer;
 }
@@ -391,6 +393,7 @@ nav {
   .text-box {
     max-width: 100%;
     padding: 0 20px;
+    height: 100vh;
   }
 
   .text-box h1 {
@@ -528,7 +531,7 @@ nav {
   }
 }
 
-/*-------- achievements ---------*/
+/*-------- Achievements Section ---------*/
 
 .achievements {
   width: 80%;
@@ -577,53 +580,55 @@ nav {
   margin-bottom: 10px;
 }
 
+/* Media Queries for Responsiveness */
+
+@media (max-width: 1024px) {
+  .achievements-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+  }
+
+  .achievements-col h3 {
+    font-size: 22px;
+  }
+
+  .large-number {
+    font-size: 28px;
+  }
+
+  .small-text {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 768px) {
   .achievements {
     padding: 50px 20px; /* Reduce padding on smaller screens */
   }
 
   .achievements-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
-    gap: 10px; /* Adjust the gap between items */
-    max-width: 100%; /* Ensure container can occupy full width */
-    margin: auto; /* Center align the container */
-    padding: 20px; /* Adjust padding inside the container */
+    grid-template-columns: 1fr; /* One column per row */
   }
 
   .achievements-col {
-    border-radius: 10px; /* Keep rounded corners if desired */
-    padding: 20px; /* Adjust padding inside the box */
-    box-sizing: border-box;
-    transition: box-shadow 0.5s;
-    overflow: hidden; /* Hide overflowing content */
-    text-align: center; /* Center align text */
-    background-color: transparent; /* Remove background color */
-    box-shadow: none; /* Remove box shadow */
-    border: none; /* Remove borders */
+    padding: 15px; /* Reduce padding inside the box */
   }
 
   .achievements-col img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px; /* Keep rounded corners if desired */
-    margin-bottom: 10px;
+    width: 60px; /* Smaller image size */
+    margin-bottom: 8px;
   }
 
   .achievements-col h3 {
-    font-size: 18px; /* Decreased font size for headings */
-    margin-bottom: 8px; /* Adjusted margin bottom */
-    white-space: nowrap; /* Prevent wrapping */
-    overflow: hidden; /* Hide overflowing text */
-    text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+    font-size: 20px;
+    margin-bottom: 8px;
   }
 
-  .achievements-col h3 .large-number {
-    font-size: 20px; /* Adjusted font size for large numbers */
+  .large-number {
+    font-size: 24px;
   }
 
-  .achievements-col h3 .small-text {
-    font-size: 12px; /* Decreased font size for small text */
+  .small-text {
+    font-size: 12px;
   }
 }
 
@@ -757,7 +762,6 @@ nav {
 /* -----------------news--------------------- */
 
 .latest-news {
-  width: 80%;
   margin: auto;
   text-align: center;
   padding: 100px 0;
@@ -784,6 +788,7 @@ nav {
   margin-bottom: 20px;
   flex: 0 1 calc(33.333% - 20px); /* Default three articles per row */
   max-width: calc(33.333% - 20px);
+  align-items: center;
 }
 
 .news-article:hover {
@@ -791,8 +796,7 @@ nav {
 }
 
 .news-article img {
-  max-width: 100%;
-  height: auto;
+  width: 50%;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -800,19 +804,13 @@ nav {
 .news-article h3 {
   font-size: 24px;
   margin-bottom: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #051d37; /* Ensures contrast against the background */
 }
 
 .news-article p {
   font-size: 16px;
-  color: #777;
+  color: #051d37; /* Ensures contrast against the background */
   flex: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .news-article a {
@@ -1059,7 +1057,7 @@ w
 }
 
 .social-icon:hover {
-  background-color: #0a2951;
+  background-color: #ffcccc;
 }
 
 .slogan {
@@ -1088,7 +1086,7 @@ w
 }
 
 .nav-link:hover {
-  color: #e6e6e6;
+  color: #ffcccc;
 }
 
 /* Media Queries */
